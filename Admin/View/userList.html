@@ -1,0 +1,22 @@
+
+	<div class="layui-body">
+		<div ><h1 class="text-center">用户列表</h1></div>
+		<div class="layui-collapse">
+				<?php     foreach($arrs as $arr){ ?>
+					<div class="layui-colla-item">
+						<h2 class="layui-colla-title"><?php echo $arr['username'] ?></h2>
+						<div class="layui-colla-content layui-show">
+							<div>
+								<span>添加时间：<?php echo date('Y-m-d H:i:s',$arr['user_add_time'])?></span>
+								<span style="float: right">备注姓名：<?php echo $arr['note']?></span><br>
+							</div>
+							<div >
+								<h2><a style="color: #005cbf" href="?a=updateUserPage&uid=<?php  echo $arr['uid']  ?>">修改</a></h2>
+							</div>
+						</div>
+					</div>
+				<?php }?>
+		</div>
+
+	</div>
+

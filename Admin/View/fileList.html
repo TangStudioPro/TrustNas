@@ -1,0 +1,46 @@
+<div class="layui-body">
+
+	<div><br></div>
+	<table width="90%" border="1" align="center" rules="all" cellpadding="5" class="m-auto filelist" >
+		<tr bgcolor='#ccc'>
+			<th class="text-center">上传者</th>
+			<th class="text-center">文件名</th>
+			<th class="text-center">内存</th>
+			<th class="text-center">添加时间</th>
+			<th class="text-center">操作选项</th>
+		</tr>
+		<?php
+	//循环二维数组if(isset($arrs))
+	foreach($arrs as $arr){
+	?>
+		<tr align="center">
+			<td><?php echo $arr['username']?></td>
+			<td><?php echo $arr['filename']?></td>
+			<td><?php echo round($arr['filesize']/1024,2)?>kb</td>
+			<td><?php echo date('Y-m-d H:i:s',$arr['uptime'])?></td>
+			<td>
+				<a href="#" onClick="confirmDel(<?php echo $arr['id']?>)">删除</a>
+			</td>
+		</tr>
+		<?php }?>
+		<tr >
+			<td colspan="5" align="center" height="30" class="pagelist">
+				<?php $pageObj->fenye() ?>
+			</td>
+		</tr>
+	</table>
+
+</div>
+<script type="text/javascript">
+
+    function confirmDel(id)
+    {
+        //询问是否要删除？
+        if(window.confirm("确定与否删除文件/直接删除"))
+        {
+            //如果单击"确定"按钮，跳转到delete.php页面
+            //ac代表删除动作。问号省略了控制器名
+            location.href = "?a=delete&id="+id;
+        }
+    }
+</script>
