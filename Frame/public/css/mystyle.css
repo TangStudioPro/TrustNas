@@ -259,23 +259,24 @@ body {
     position: absolute;
     top: 100px;
     margin-left: 50px;
-    box-shadow: 0 0 13px 0 rgba(82, 63, 105, .05);
+    box-shadow: 0 15px 25px 0 rgba(41,40,53,.08);
     border-radius: 4px;
 }
 
 .logo-ty {
-    margin: 30px 25px;
+    margin: 10px 25px;
     width: 200px;
 }
 
 .fileBox-ty {
     width: 1050px;
     margin: auto;
-    box-shadow: 0 0 13px 0 rgba(82, 63, 105, .05);
+    box-shadow: 0 15px 25px 0 rgba(41,40,53,.08);
     background-color: #fff;
     margin-bottom: 20px;
     border-radius: 4px;
     padding: 10px 0;
+    z-index: 2;
 }
 
 .file-ty {
@@ -328,7 +329,7 @@ a {
     bottom: -70px;
     text-align: center;
     letter-spacing: 8px;
-    font-weight: 200;
+    font-weight: 500;
 }
 
 .upload-ty button {
@@ -337,4 +338,20 @@ a {
     position: relative;
     bottom: -140px;
     z-index: 999;
+}
+
+.flieL{
+    display: none;
+}
+
+.flie{
+    
+}
+
+.fileList-ty:hover > .flie{
+    display: none;
+}
+
+.fileList-ty:hover > .flieL{
+    display: inline-block;
 }

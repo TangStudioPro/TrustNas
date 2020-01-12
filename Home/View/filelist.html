@@ -2,6 +2,10 @@
 
 <div class="sidenav-my show sidenavs more-bar" id="sidenav-main" >
         <img src="./Frame/public/img/logo.svg" alt="" class="logo-ty">
+        <div class="file-ty" style="text-align: center;line-height: 20px;margin-bottom: 30px;">
+            Hello <?php echo $_SESSION['username'] ?>
+        </div>
+        
         <div class="nav-application clearfix" id="nav">
             <a href="index.php"  class="btn btn-square text-sm active">
                 <span class="btn-inner--icon d-block icon-my">
@@ -47,8 +51,8 @@
 		foreach($arrs as $arr){
 		?>
             <div class="fileList-ty">
-                <img src="./Frame/public/img/file.png" alt="" height="50" style="margin: 20px;">
-                <!-- <i class="czs-file-l" style="margin: 20px;font-size: 5rem;color: 232323;"></i> -->
+                <?php  $pageObj->isShared($arr['shared'],$arr['id'])?> 
+                <!-- <img src="./Frame/public/img/file.svg" alt="" height="75" style="margin: 10px;"> -->
                 <p class="file-ty">
                     <?php echo $arr['filename']?>
                 </p>
@@ -62,9 +66,10 @@
                     <a style="width: 100px;font-size: 25px;padding: 0px;" class="btn btn-ty" href="#" role="button"
                         id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="czs-more" style="font-weight: 500;"></i>
-                        <div style="position: absolute;" class="isSharedBox">
+                        <!-- 已共享眼睛 -->
+                        <!-- <div style="position: absolute;" class="isSharedBox">
                             <?php  $pageObj->isShared($arr['shared'],$arr['id'])?> 
-                        </div>
+                        </div> -->
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item-ty"  href="#"

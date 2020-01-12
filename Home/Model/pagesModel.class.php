@@ -113,10 +113,13 @@ class pagesModel
     {
         $page=isset($_GET['page']) ? $_GET['page'] : 1;
         if ($shared==1)
-        {
-            echo "<i class='czs-eye-l isShared' ></i>";
+        {   
+            echo "<img src='./Frame/public/img/fileShare.svg'  height='75' style='margin: 10px;' class='flie'>
+            <img src='./Frame/public/img/fileShareL.svg'  height='75' style='margin: 10px;' class='flieL'>";
         }else
         {
+            echo "<img src='./Frame/public/img/file.svg'  height='75' style='margin: 10px;' class='flie'>
+            <img src='./Frame/public/img/fileL.svg'  height='75' style='margin: 10px;' class='flieL'>";
         }
     }
 
