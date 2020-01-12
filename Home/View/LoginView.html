@@ -5,14 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./Frame/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Frame/public/css/mystyle.css">
     <link rel="stylesheet" href="./Frame/public/strawberry-v2.0.0/style.css">
-
 
     <title>用户登录</title>
     <style type="text/css">
@@ -22,7 +27,7 @@
             padding: 15px;
             margin: auto;
         }
-        
+
         html,
         body {
             height: 100%;
@@ -34,7 +39,7 @@
             line-height: 1.5;
             color: #212529;
         }
-        
+
         .login {
             height: 90%;
             display: -ms-flexbox;
@@ -46,77 +51,36 @@
         }
     </style>
 </head>
-<!-- <body>
-<div class="box">
-
-	<div class="title">
-		<img src="./Home/img/logo.png" style="width: 120px;height: 60px" alt="logo">
-		<br>
-		<a href="#">请先登录！</a>
-	</div>
-	
-	
-	<form method="post" action="?a=login">
-		<table align="center" width="400">
-			<tr>
-				<td width="100" align="right">用户名：</td>
-				<td><input type="text" name="username"></td>
-			</tr>
-			<tr>
-				<td align="right">密&nbsp;&nbsp;&nbsp;码：</td>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<td align="right">验证码：</td>
-				<td>
-					<input style="float:left;" type="text" name="verify" size="4" maxlength="4">
-					<img style="float:left;margin-left:10px;cursor: pointer;height:22px;" src="./Home/public/captcha.php" onClick="this.src='./Home/public/captcha.php?'+Math.random()">
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				
-				<td>
-					<input type="submit" value="登录">
-					<input type="hidden" name="token" value="<?php echo $_SESSION['token']?>">
-					<input type="reset" value="重置"><br>
-
-				</td>
-			</tr>
-		</table>
-	</form>
-
-</div>
-</body> -->
 
 <body class="text-center">
     <div class="login">
         <form class="form-signin" method="post" action="?a=login">
-            <img class="mb-4" src="./Frame/public/img/logo.svg" alt="" width="330">
+            <img class="mb-4" src="./Frame/public/img/logo.svg" alt="" width="100%">
             <h1 class="h3 mb-3 font-weight-normal"></h1>
-
-
-            <!-- <label for="username" class="sr-only">用户名</label> -->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <p class="input-group-text" id="basic-addon1" style="width: 80px;text-align: justify;">用户名</p>
                 </div>
-                <input class="form-control" type="text" id="username" name="username" required="" autofocus="" placeholder="">
+                <input class="form-control" type="text" id="username" name="username" required="" autofocus=""
+                    placeholder="">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1" style="width: 80px;text-align: justify;">密&nbsp;&nbsp;&nbsp;码</span>
+                    <span class="input-group-text" id="basic-addon1"
+                        style="width: 80px;text-align: justify;">密&nbsp;&nbsp;&nbsp;码</span>
                 </div>
                 <input class="form-control" type="password" name="password" placeholder="" required="">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1" style="width: 80px;padding: 0px !important;">
-						<img style="width: 80px;height: 100%;border-radius: .25rem;border-top-right-radius: 0;border-bottom-right-radius: 0;" src="./Frame/public/captcha.php"
-					     onClick="this.src='./Frame/public/captcha.php?'+Math.random()">
-					</span>
+                        <img style="width: 80px;height: 100%;border-radius: .25rem;border-top-right-radius: 0;border-bottom-right-radius: 0;"
+                            src="./Frame/public/captcha.php"
+                            onClick="this.src='./Frame/public/captcha.php?'+Math.random()">
+                    </span>
                 </div>
-                <input class="form-control" style="float:left;" type="text" name="verify" size="4" maxlength="4" placeholder="">
+                <input class="form-control" style="float:left;" type="text" name="verify" size="4" maxlength="4"
+                    placeholder="">
             </div>
 
             <div class="btn-group" role="group" aria-label="Basic example" style="margin-top: 0px;">

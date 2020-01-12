@@ -114,12 +114,12 @@ class pagesModel
         $page=isset($_GET['page']) ? $_GET['page'] : 1;
         if ($shared==1)
         {   
-            echo "<img src='./Frame/public/img/fileShare.svg'  height='75' style='margin: 10px;' class='flie'>
-            <img src='./Frame/public/img/fileShareL.svg'  height='75' style='margin: 10px;' class='flieL'>";
+            echo "<img src='./Frame/public/img/fileShare.svg'   style='margin: 10px;' class='flie'>
+            <img src='./Frame/public/img/fileShareL.svg'   style='margin: 10px;' class='flieL'>";
         }else
         {
-            echo "<img src='./Frame/public/img/file.svg'  height='75' style='margin: 10px;' class='flie'>
-            <img src='./Frame/public/img/fileL.svg'  height='75' style='margin: 10px;' class='flieL'>";
+            echo "<img src='./Frame/public/img/file.svg'   style='margin: 10px;' class='flie'>
+            <img src='./Frame/public/img/fileL.svg'   style='margin: 10px;' class='flieL'>";
         }
     }
 
