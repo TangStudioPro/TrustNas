@@ -71,7 +71,7 @@ class  IndexModel
     public function sharedList($startRow,$pageSize)
     {
         $sql = "SELECT * FROM `uploadfile` JOIN `user` ON uploadfile.uid = user.uid 
-                  where uploadfile.shared=1 LIMIT {$startRow}{$pageSize}";
+                  where uploadfile.shared=1 LIMIT {$startRow},{$pageSize}";
         return$this->db->fetchAll($sql);
     }
 

@@ -138,8 +138,8 @@ class  IndexController
         }else{
             $res=mkdir($dstfile,0777,true);
         }
-        if (strlen($fname)<20)
-        {
+//        if (strlen($fname)>20)//关掉对文件名上传的长度限制  并修改了数据库varchar的长度限制  20改为50
+//        {
             //根据需求 关掉对文件的大小的格式限制
 //            if(in_array(strtolower($fileExt),$filearr)&&$filesize<=200*1024*1024){//判断格式和大小
                 if(file_exists($dstfile.$fname)){//判断上传的文件是否重名
@@ -157,7 +157,7 @@ class  IndexController
                         echo "<script>alert('上传2成功');parent.location.href='./index.php';</script>";
                     }else
                     {
-                        echo "<script>alert('上传失败.');</script>";
+                        echo "<script>alert('上传失败，请选择文件');</script>";
                     }
 
                 }else{
@@ -178,11 +178,11 @@ class  IndexController
 //    ;parent.location.href='./index.php';</script>";
 //            }
 
-        }else
-        {
-            echo "<script>alert('文件名长度过长/建议修改文件名称')
-    ;parent.location.href='./index.php';</script>";
-        }
+//        }else
+//        {
+//            echo "<script>alert('文件名长度过长/建议修改文件名称')
+//    ;parent.location.href='./index.php';</script>";
+//        }
     }
     //删除
     public function delete()

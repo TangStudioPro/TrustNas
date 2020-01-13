@@ -90,7 +90,7 @@ class pagesModel
                 echo "<li class='page-item-my active' ><span class='page-link page-link-my' >$i</span></li>";
             }else
             {
-                echo "<li class='page-item-my'  ><a  class='page-link page-link-my' href='?page=$i'>$i</a></li>";
+                echo "<li class='page-item-my'  ><a  class='page-link page-link-my' href='?c=$a&page=$i'>$i</a></li>";
             }
         }
 

@@ -28,19 +28,19 @@ imagefilledrectangle($img,0,0,$width,$height,$color);//绘制矩形
 define('BASE_PATH',str_replace('\\','/',realpath(dirname(__FILE__).'/'))."/");//动态目录分隔符/\
 
 
-//绘制像素点
-for ($i=0;$i<100;$i++)
-{
-    $color2=imagecolorallocate($img,mt_rand(0,255),mt_rand(0,255),mt_rand(100,255));//设置颜色
-    imagesetpixel($img,mt_rand(0,$width),mt_rand(0,$height),$color2);
-}
+////绘制像素点
+//for ($i=0;$i<100;$i++)
+//{
+//    $color2=imagecolorallocate($img,mt_rand(0,255),mt_rand(0,255),mt_rand(100,255));//设置颜色
+//    imagesetpixel($img,mt_rand(0,$width),mt_rand(0,$height),$color2);
+//}
 
-//绘制像线段
-for ($i=0;$i<10;$i++)
-{
-    $color3=imagecolorallocate($img,mt_rand(0,255),mt_rand(0,255),mt_rand(100,255));//设置颜色
-    imageline($img,mt_rand(0,$width),mt_rand(0,$height),mt_rand(0,$width),mt_rand(0,$height),$color3);
-}
+////绘制像线段
+//for ($i=0;$i<10;$i++)
+//{
+//    $color3=imagecolorallocate($img,mt_rand(0,255),mt_rand(0,255),mt_rand(100,255));//设置颜色
+//    imageline($img,mt_rand(0,$width),mt_rand(0,$height),mt_rand(0,$width),mt_rand(0,$height),$color3);
+//}
 //将验证码使用TTF文本填充到画布
 $color4=imagecolorallocate($img,mt_rand(0,255),mt_rand(0,255),mt_rand(100,255));//设置颜色
 $fontfile=BASE_PATH."msyhbd.ttf";
