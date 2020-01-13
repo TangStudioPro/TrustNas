@@ -157,7 +157,7 @@ class  IndexController
                         echo "<script>alert('上传2成功');parent.location.href='./index.php';</script>";
                     }else
                     {
-                        echo "<script>alert('上传失败，请选择文件');</script>";
+                        echo "<script>alert('上传失败，请选择文件');parent.location.href='./index.php';</script>";
                     }
 
                 }else{
