@@ -2,61 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e64e2a82-4736-4e90-af07-9097d02d7429" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/123456upload/img/5b6e9ab8c0f20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Conf/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Conf/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frame/public/css/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frame/public/css/mystyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/Conf/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/Conf/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/Controller/IndexController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/Controller/IndexController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/Controller/SharedController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/Controller/SharedController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/Model/IndexModel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/Model/IndexModel.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/Model/pagesModel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/Model/pagesModel.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/View/LoginView.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/View/LoginView.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/View/UploadView.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/View/UploadView.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/View/filelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/View/filelist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/View/recovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/View/recovery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/View/sharedFileList.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/View/sharedFileList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/file/2019-10.10(1).txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/file/AJ.ai" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/file/git.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/file/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/file/laravel笔记.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/file/layui-v2.5.5.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/file/symfony.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/file/程序员在囧途.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/35.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/53.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9ab8c0f20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9c49c93b2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9c6e3be4d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9c86609ba.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9c8ac3ca6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9c8c2f20e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9c8fd2440.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9c99b847e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9cbb3eec2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/5b6e9d3142860.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/63.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/66.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/74.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/745e13fd7664859.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/87.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/98.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/default5e13fd7000595.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/katongme5e12abcc75a2a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/top-bg.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/yanzhengma2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/yanzhengma25e15746bbd97e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/yanzhengma25e157485ecb56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/img/yanzhengma25e17d97835704.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/music/01两个小问题.wmv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminupload/music/18主键冲突的解决办法.wmv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiaokrupload/img/5b6e9ab8c0f20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qiaokrupload/img/yanzhengma2.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +44,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="418">
-                <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+                <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               </first_editor>
               <second_editor />
             </state>
@@ -229,21 +175,21 @@
       <workItem from="1578883474032" duration="3639000" />
       <workItem from="1578893197975" duration="11897000" />
       <workItem from="1578965317621" duration="1010000" />
-      <workItem from="1579229205713" duration="58000" />
+      <workItem from="1579229205713" duration="212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16604000" />
+    <option name="totallyTimeSpent" value="16758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="340" y="8" width="1560" height="1120" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16844207" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16844207" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.33097166" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32928064" />
@@ -346,7 +292,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="418">
-            <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           </first_editor>
           <second_editor />
         </state>
