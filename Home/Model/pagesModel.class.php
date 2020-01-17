@@ -38,6 +38,23 @@ class pagesModel
 
         return $this->arrs;
     }
+		    
+	public	function trans($num)
+	{
+		$kb = 1024;
+		$mb = 1024*$kb;
+		$gb = 1024*$mb;
+		if($num<$kb)
+		{
+			return round($num,2).'B';
+		}elseif ($num<$mb) {
+			return round($num/$kb,2).'KB';
+		}elseif($unm<$gb)  {
+			return round($num/$mb,2).'MB';
+		}else{
+			return round($num/$gb,2).'GB';
+		}
+	}
 
     public  function sharedList()
     {

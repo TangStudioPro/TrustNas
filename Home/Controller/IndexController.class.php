@@ -101,94 +101,65 @@ class  IndexController
         $_SESSION = array();
         session_destroy();
         header("location:?");
-        //include "../LoginView.html";
     }
     public function upload()
     {
-        $name=$_SESSION['username'];
-        //print_r($_FILES);
-        //获取文件类型
-        $tmpfile=$_FILES["file"]["tmp_name"];//临时文件
-        $filetype=explode('/',$_FILES["file"]["type"])[0];//image格式
-        //echo $filetype."<br>";
-        $fname=iconv("utf-8","gbk",$_FILES["file"]["name"]);//完整文件名
-        $fileExt=@array_pop(explode(".",$fname));//后缀
-        $ffname=@array_shift(explode(".",$fname));//除后缀文件名
-        //echo $fname."<br>".$fileExt."<br>".$ffname;
-
-        //设置服务器上存储文件名
-        //$filename=time().mt_rand().".".$fileExt;
-        //设置上传文件目录
-        if($filetype=="image"){
-            $dstfile="./".$name."upload/img/";
-        }else if($filetype=="text"||$filetype=="application"){
-            $dstfile="./".$name."upload/file/";
-        }else{
-            $dstfile="./".$name."upload/music/";
+        $name = $_SESSION['username'];
+        $uid  = $_SESSION['uid'];//登录用户id
+        // print_r($_FILES);die();
+        if(count($_FILES['file']['name'])>5)
+        {
+        	 echo "<script>alert('请选择小于5个文件');parent.location.href='./index.php';</script>";
+        	 die();
         }
-        //判断规定类型
-//        $filearr=array("jpg","jpeg","png","xls","gif","rar","txt","docx","zip","mp3");
-        //获取文件大小
-        $filesize=$_FILES['file']['size'];
-
-        $uid=$_SESSION['uid'];//登录用户id
-        $p='';//如果上传文件名存在   新的完整路径及完整文件名
-        if(is_dir($dstfile)){//是否存在这个目录没有则创建并给权限
-
-        }else{
-            $res=mkdir($dstfile,0777,true);
-        }
-//        if (strlen($fname)>20)//关掉对文件名上传的长度限制  并修改了数据库varchar的长度限制  20改为50
-//        {
-            //根据需求 关掉对文件的大小的格式限制
-//            if(in_array(strtolower($fileExt),$filearr)&&$filesize<=200*1024*1024){//判断格式和大小
-                if(file_exists($dstfile.$fname)){//判断上传的文件是否重名
-                    $uploadName=$ffname.uniqid().'.'.$fileExt;//重新构建完整名称
-                    $p=$dstfile.$uploadName;//如果上传文件名存在   新的完整路径及完整文件名
+        for ($i = 0; $i < count($_FILES['file']['name']); $i++) 
+        {
+        	 //if($_FILES["file"]["error"][$i] >= 0)
+        	 //{
+        	 //	continue;
+		     //}
+		        $tmpfile=$_FILES["file"]["tmp_name"][$i];//临时文件
+		        
+		        $filetype=explode('/',$_FILES["file"]["type"][$i])[0];//image格式
+		        //echo $filetype."<br>";
+		        $fname=$_FILES["file"]["name"][$i];//完整文件名
+		        $fileExt=@array_pop(explode(".",$fname));//后缀
+		        $filename=@array_shift(explode(".",$fname));//除后缀文件名
+		        // echo $fname."<br>".$fileExt."<br>".$ffname."<br>";
+		
+		        //设置上传文件目
+		        $dstfile="upload".DS.$name.DS.$filetype.DS;
+		        //获取文件大小
+		        $filesize=$_FILES['file']['size'][$i];
+		    	if(is_dir($dstfile)){//是否存在这个目录没有则创建并给权限
+		
+		        }else{
+		            $res=mkdir($dstfile,0777,true);
+		        }
+				$uploadName=uniqid().'.'.$fileExt;//重新构建完整名称
+              //根据需求 关掉对文件的大小的格式限制
+              //if(in_array(strtolower($fileExt),$filearr)&&$filesize<=200*1024*1024){//判断格式和大小
+                    $p=ROOT_PATH.$dstfile.$uploadName;//的完整路径及完整文件名
                     if(move_uploaded_file($tmpfile,$p))
                     {
-                        //如果文件为中文
-                        $fname=iconv("gbk","utf-8",$fname);//完整文件
-                        $fileExt=@array_pop(explode(".",$fname));//后缀
-                        $ffname=@array_shift(explode(".",$fname));//除后缀文件名
-                        $uploadName=iconv("gbk","utf-8",$uploadName);//完整文件名
-                        $p=iconv("gbk","utf-8",$p);
-                        $this->modelObj->upload($uid,$p,$ffname,$uploadName,$filesize,$fileExt);
-                        echo "<script>alert('上传2成功');parent.location.href='./index.php';</script>";
+                        // $fileExt=@array_pop(explode(".",$fname));//后缀
+                        // $filename=@array_shift(explode(".",$fname));//除后缀文件名
+                        $src=".".DS.$dstfile.$uploadName;
+                        $this->modelObj->upload($uid,$src,$filename,$uploadName,$filesize,$fileExt);
+                        echo "<script>alert('上传1成功');parent.location.href='./index.php';</script>";
                     }else
                     {
                         echo "<script>alert('上传失败，请选择文件');parent.location.href='./index.php';</script>";
                     }
 
-                }else{
-                    if(move_uploaded_file($tmpfile,$dstfile.$fname)){
-                        $fname=iconv("gbk","utf-8",$fname);//完整文件
-                        $fileExt=@array_pop(explode(".",$fname));//后缀
-                        $ffname=@array_shift(explode(".",$fname));//除后缀文件名
-
-                        $this->modelObj->upload($uid,$dstfile.$fname,$ffname,$fname,$filesize,$fileExt);
-                        echo "<script>alert('上传成功');parent.location.href='./index.php';</script>";
-                    }else
-                    {
-                        echo "<script>alert('上传失败....');parent.location.href='./index.php';</script>";
-                    }
-                }
-//            }else{
-//                echo "<script>alert('文件后缀不允许--建议压缩文件（或者文件大小超过200M）')
-//    ;parent.location.href='./index.php';</script>";
-//            }
-
-//        }else
-//        {
-//            echo "<script>alert('文件名长度过长/建议修改文件名称')
-//    ;parent.location.href='./index.php';</script>";
-//        }
+        }
+        
+       
+        
     }
     //删除
     public function delete()
     {
-//        echo "功能尚不完善，正在赶工中...";
-//        header("refresh:3;url=index.php");
         $id=$_GET['id'];
         $arr=$this->modelObj->fetchOne($id);
         if (file_exists($arr['filesrc']))
@@ -206,24 +177,23 @@ class  IndexController
     //下载
     public function download()
     {
-
-        $filesrc=$_GET['filesrc'];
-        $uploadname=$_GET['uploadname'];
-        $id=$_GET['id'];
-
-
-        if (!file_exists($filesrc))
-        {
-            $this->modelObj->delete($id);
-            echo "<script>alert('当前文件不存在或已删除');parent.location.href='./index.php';</script>";
+        $fileSrc    =  $_GET['filesrc'];
+        $filename =  $_GET['filename'];
+        $filetype   =  $_GET['filetype'];
+        $filename=iconv("utf-8","gb2312",$_GET['filename']);
+        $filetype=iconv("utf-8","gb2312",$_GET['filetype']);
+        
+        
+         if(!file_exists($fileSrc)){
+        	echo "<script>alert('文件路径：$fileSrc 不存在');parent.location.href='./index.php';</script>";
             die();
         }
-
+       
         header("content-type:application/octet-stream");
 
-        header("content-Disposition:attachment;filename={$uploadname}");//下载文件名
+        header( "Content-Disposition: attachment;filename=\"$filename.$filetype\"" );//下载文件名
 
-        $handle=fopen($filesrc,"rb");
+        $handle=fopen(ROOT_PATH.$fileSrc,"rb");
         while ($str=fread($handle,1024))
         {
             echo $str;

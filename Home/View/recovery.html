@@ -52,7 +52,7 @@ foreach($arrs as $arr){
 					<?php echo $arr['filename']?>
 				</p>
 				<p class="file-ty">
-					<?php echo round($arr['filesize']/1024,2)?>kb
+					<?php echo $pageObj->trans($arr['filesize'])?>
 				</p>
 				<p class="file-ty">
 					<?php

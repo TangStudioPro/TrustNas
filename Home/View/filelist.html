@@ -51,13 +51,14 @@
 		foreach($arrs as $arr){
 		?>
             <div class="fileList-ty">
+            	<p  hidden=""><?php echo $arr['filetype'] ?>这个是文件后缀</p>
                 <?php  $pageObj->isShared($arr['shared'],$arr['id'])?> 
                 <!-- <img src="./Frame/public/img/file.svg" alt="" height="75" style="margin: 10px;"> -->
                 <p class="file-ty">
-                    <?php echo $arr['uploadname']?>
+                    <?php echo $arr['filename']?>
                 </p>
                 <p class="file-ty">
-                    <?php echo round($arr['filesize']/1024,2)?>kb
+                    <?php echo $pageObj->trans($arr['filesize'])?>
                 </p>
                 <p class="file-ty">
                     <?php echo date('Y-m-d H:i:s',$arr['uptime'])?>
@@ -89,7 +90,7 @@
         <div class="page-ty">
             <nav aria-label="Page navigation example" style="text-align: center;">
                 <ul class="pagination" >
-                    <?php $pageObj->fenye();  ?>
+                    <?php $pageObj->fenye("Index");  ?>
                 </ul>
             </nav>
         </div>

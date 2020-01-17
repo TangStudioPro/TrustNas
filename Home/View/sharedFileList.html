@@ -54,7 +54,7 @@
                     <?php echo $arr['uploadname'] ?>
                 </p>
                 <p class="file-ty">
-                    <?php echo round($arr['filesize']/1024,2)?>kb
+                    <?php echo $pageObj->trans($arr['filesize'])?>kb
                 </p>
                 <div class="dropdown" style="margin: 10px 0;">
                     <a  class="btn btn-ty"

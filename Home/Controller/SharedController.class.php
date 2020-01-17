@@ -40,11 +40,19 @@ class SharedController
     {
 
         $fileSrc    =  $_GET['filesrc'];
-        $uploadName =  $_GET['uploadname'];
+        $filename   =  $_GET['filename'];
+        $filetype   =  $_GET['filetype'];
+        $filename=iconv("utf-8","gb2312",$_GET['filename']);
+        $filetype=iconv("utf-8","gb2312",$_GET['filetype']);
 
+        if(!file_exists($fileSrc)){
+        	echo "<script>alert('当前文件不存 文件路径：$fileSrc');parent.location.href='./index.php';</script>";
+            die();
+        }
+        
         header("content-type:application/octet-stream");
-
-        header("content-Disposition:attachment;filename={$uploadName}");
+        header("content-Disposition:attachment;filename=\"$filename.$filetype\"");
+        
         $handle=fopen($fileSrc,"rb");
         while ($str=fread($handle,1024))
         {

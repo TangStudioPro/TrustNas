@@ -24,7 +24,7 @@ class  IndexModel
     public function upload($id,$p,$ffname,$uploadname,$filesize,$fileExt)
     {
         $time=time();
-        $sql = "INSERT INTO uploadfile VALUES (null ,$id,'$p','$ffname','$uploadname','$filesize','$fileExt','$time',0,null,0)";
+        $sql = "INSERT INTO uploadfile VALUES (null ,$id,'$p','$ffname','$uploadname',$filesize,'$fileExt','$time',0,null,0)";
         return $this->db->exec($sql);
     }
     public function fileList($uid,$state)
@@ -63,7 +63,7 @@ class  IndexModel
     }
     public function sharedFetchAll()
     {
-        $sql = "SELECT * FROM `uploadfile`JOIN user ON uploadfile.uid = user.uid WHERE uploadfile.shared=1";
+        $sql = "SELECT * FROM `uploadfile`JOIN user ON uploadfile.uid = user.uid WHERE uploadfile.shared=1 AND state =0";
         $fetchAll = $this->db->fetchAll($sql);
         $count    = $this->db->rowCount($sql);
         return array("fetchAll"=>$fetchAll,"count"=>$count);
