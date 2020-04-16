@@ -5,9 +5,9 @@ return array(
 		'db_type'	=> 'mysql',
 		'db_host'	=> 'localhost',
 		'db_port'	=> '3306',
-		'db_user'	=> 'trustnas',
-		'db_pass'	=> 'R7eeWwRxXY8kfGxt',
-		'db_name'	=> 'trustnas',
+		'db_user'	=> 'pan_trustocean_c',
+		'db_pass'	=> 'CA44HYPJZSGYpahw',
+		'db_name'	=> 'pan_trustocean_c',
 		'charset'	=> 'utf8',
 
 		//默认路由参数

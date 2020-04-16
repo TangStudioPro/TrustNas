@@ -49,15 +49,15 @@ foreach($arrs as $arr){
 			<div class="fileList-ty">
 				<img src="./Frame/public/img/file.svg" alt="" height="75" style="margin: 10px;">
 				<p class="file-ty">
-					<?php echo $arr['filename']?>
+					 <?php echo $arr['filename'].".".$arr['filetype'] ?>
 				</p>
-				<p class="file-ty">
-					<?php echo $pageObj->trans($arr['filesize'])?>
-				</p>
+				<!--<p class="file-ty">-->
+				<!--	<?php echo $pageObj->trans($arr['filesize'])?>-->
+				<!--</p>-->
 				<p class="file-ty">
 					<?php
 					echo 7*24-$this::timediff(time(),$arr['recoverytime'])['hour']
-					?>小时后将自动删除
+					?>小时后将删除
 				</p>
 				<div class="dropdown" style="margin: 10px 0;">
 					<a  class="btn btn-ty" href="#" role="button"

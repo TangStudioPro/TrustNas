@@ -54,11 +54,9 @@
             	<p  hidden=""><?php echo $arr['filetype'] ?>这个是文件后缀</p>
                 <?php  $pageObj->isShared($arr['shared'],$arr['id'])?> 
                 <!-- <img src="./Frame/public/img/file.svg" alt="" height="75" style="margin: 10px;"> -->
+             
                 <p class="file-ty">
-                    <?php echo $arr['filename']?>
-                </p>
-                <p class="file-ty">
-                    <?php echo $pageObj->trans($arr['filesize'])?>
+                     <?php echo $arr['filename'].".".$arr['filetype'] ?>
                 </p>
                 <p class="file-ty">
                     <?php echo date('Y-m-d H:i:s',$arr['uptime'])?>
@@ -81,6 +79,9 @@
                                 style="margin-right: 5px;"></i>下载</a>
                         <div>
                             <?php  $pageObj->shared($arr['shared'],$arr['id'])?>
+                        </div>
+                        <div>
+                           <a href="<?php echo $arr['filesrc'] ?>" class="dropdown-item-ty target="_blank" >预览</a>
                         </div>
                     </div>
                 </div>

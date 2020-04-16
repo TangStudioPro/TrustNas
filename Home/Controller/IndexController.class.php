@@ -107,12 +107,12 @@ class  IndexController
         $name = $_SESSION['username'];
         $uid  = $_SESSION['uid'];//登录用户id
         // print_r($_FILES);die();
-        if(count($_FILES['file']['name'])>5)
+        if(count((array)$_FILES['file']['name'])>5)
         {
         	 echo "<script>alert('请选择小于5个文件');parent.location.href='./index.php';</script>";
         	 die();
         }
-        for ($i = 0; $i < count($_FILES['file']['name']); $i++) 
+        for ($i = 0; $i < count((array)$_FILES['file']['name']); $i++) 
         {
         	 //if($_FILES["file"]["error"][$i] >= 0)
         	 //{
@@ -146,7 +146,7 @@ class  IndexController
                         // $filename=@array_shift(explode(".",$fname));//除后缀文件名
                         $src=".".DS.$dstfile.$uploadName;
                         $this->modelObj->upload($uid,$src,$filename,$uploadName,$filesize,$fileExt);
-                        echo "<script>alert('上传1成功');parent.location.href='./index.php';</script>";
+                        echo "<script>alert('上传成功');parent.location.href='./index.php';</script>";
                     }else
                     {
                         echo "<script>alert('上传失败，请选择文件');parent.location.href='./index.php';</script>";
@@ -219,6 +219,30 @@ class  IndexController
         {
             echo "<script>alert('取消共享');parent.location.href='?page=$page'</script>";
         }
+    }
+    //
+    public function  show()
+    {
+    	// $path=substr(strrchr($_GET['path'],'.'),1);
+    	// echo($path);die();
+    	//         $fileSize = file_put_contents($fileDir.$fileName,$remoteFile);
+     //   if(!$fileSize){
+     //       echo 'HTTP/1.1 404 NOT FOUND';exit;
+     //       //Header('HTTP/1.1 404 NOT FOUND');
+     //   }
+        
+     //   if(!file_exists($fileDir.$fileName)){
+     //       echo 'HTTP/1.1 404 NOT FOUND';exit;
+     //       //Header('HTTP/1.1 404 NOT FOUND');
+     //   }
+        //以只读和二进制模式打开文件   
+        $file = fopen ( $_GET['path'], "rb" ); 
+        //告诉浏览器这是一个pdf格式的文件    
+        Header ( "Content-type: application/pdf" );
+        //读取文件内容并直接输出到浏览器    
+        echo fread ( $file, filesize ( $fileDir . $fileName ) );    
+        fclose ( $file );    
+        exit ();
     }
 
 }
